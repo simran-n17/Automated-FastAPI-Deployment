@@ -1,5 +1,3 @@
-
-```markdown
 # 🚀 FastAPI Docker Deployment with GitHub Actions
 
 Welcome to the **FastAPI Docker Deployment** project! This repository demonstrates how to automate the creation and deployment of a Dockerized FastAPI application using **GitHub Actions**. Whether you're a DevOps enthusiast or a developer looking to streamline your CI/CD pipeline, this project is for you!
@@ -11,6 +9,7 @@ Welcome to the **FastAPI Docker Deployment** project! This repository demonstrat
 - **FastAPI Server**: A lightweight Python web server that responds with JSON data.
 - **Dockerized Application**: Containerized using Docker for easy deployment and scalability.
 - **GitHub Actions Workflow**: Automates the build and push process to Docker Hub on every `push` event.
+- **Continuous Delivery**: Ensures seamless deployment with automated workflows.
 
 ---
 
@@ -22,6 +21,7 @@ Before you begin, ensure you have the following installed:
 - [Git](https://git-scm.com/)
 - A [Docker Hub](https://hub.docker.com/) account
 - A [GitHub](https://github.com/) account
+- Python (version 3.7+ recommended)
 
 ---
 
@@ -29,8 +29,8 @@ Before you begin, ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/simrannegi/devops-assignment-2.git
-cd devops-assignment-2
+git clone https://github.com/your-username/devops-assignment.git
+cd devops-assignment
 ```
 
 ### 2. Run the FastAPI Server Locally
@@ -40,7 +40,7 @@ cd devops-assignment-2
    ```
 2. Start the server:
    ```bash
-   uvicorn main:app --reload
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
    ```
 3. Access the server at: [http://localhost:8000](http://localhost:8000)
 
@@ -50,12 +50,12 @@ cd devops-assignment-2
 
 ### 1. Build the Docker Image
 ```bash
-docker build -t simrannegi/fastapi-app:latest .
+docker build -t your-dockerhub-username/fastapi-app:latest .
 ```
 
 ### 2. Run the Docker Container
 ```bash
-docker run -p 8000:8000 simrannegi/fastapi-app:latest
+docker run -p 8000:8000 your-dockerhub-username/fastapi-app:latest
 ```
 
 ### 3. Access the FastAPI Server
@@ -67,15 +67,15 @@ Open your browser and go to: [http://localhost:8000](http://localhost:8000)
 
 This project uses GitHub Actions to automate the build and deployment process. Here's how it works:
 
-1. **Trigger**: The workflow runs on every `push` event.
+1. **Trigger**: The workflow runs on every `push` event to the `main` branch.
 2. **Steps**:
    - Check out the repository.
    - Log in to Docker Hub using a secret token.
    - Build the Docker image.
    - Push the image to Docker Hub.
 
-### View the Workflow
-Check out the workflow file: [.github/workflows/DockerBuild.yml](.github/workflows/DockerBuild.yml)
+### View the Workflow File
+Check out the workflow file: [`.github/workflows/docker-deploy.yml`](.github/workflows/docker-deploy.yml)
 
 ---
 
@@ -87,7 +87,7 @@ To push the Docker image to Docker Hub, you need to set up a **Personal Access T
 2. Generate a new token and copy it.
 3. Add the token as a secret in your GitHub repository:
    - Go to **Settings** → **Secrets and variables** → **Actions**.
-   - Add a new secret named `DOCKERTOKEN` and paste the token value.
+   - Add a new secret named `DOCKERHUB_TOKEN` and paste the token value.
 
 ---
 
@@ -96,24 +96,24 @@ To push the Docker image to Docker Hub, you need to set up a **Personal Access T
 The Docker image for this project is available on Docker Hub. You can pull it using:
 
 ```bash
-docker pull simrannegi/fastapi-app:latest
+docker pull your-dockerhub-username/fastapi-app:latest
 ```
 
-**Docker Hub URL**: [https://hub.docker.com/repository/docker/simrannegi/fastapi-app](https://hub.docker.com/repository/docker/simrannegi/fastapi-app)
+**Docker Hub URL**: [https://hub.docker.com/repository/docker/your-dockerhub-username/fastapi-app](https://hub.docker.com/repository/docker/your-dockerhub-username/fastapi-app)
 
 ---
 
 ## 📂 Project Structure
 
 ```
-devops-assignment-2/
+devops-assignment/
 ├── .github/
 │   └── workflows/
-│       └── DockerBuild.yml       # GitHub Actions workflow
-├── main.py                       # FastAPI server code
-├── requirements.txt              # Python dependencies
-├── Dockerfile                    # Docker configuration
-└── README.md                     # Project documentation
+│       └── docker-deploy.yml  # GitHub Actions workflow
+├── main.py                    # FastAPI server code
+├── requirements.txt           # Python dependencies
+├── Dockerfile                 # Docker configuration
+└── README.md                  # Project documentation
 ```
 
 ---
@@ -132,33 +132,12 @@ Contributions are welcome! If you have any suggestions or improvements, feel fre
 
 ---
 
----
+## 📞 Contact
+
+For questions or collaborations, reach out via:
+- GitHub: [your-username](https://github.com/your-username)
+- Email: your-email@example.com
 
 ---
 
 Happy Coding! 🎉
-```
-
----
-
-### **Key Highlights of the README**
-1. **Engaging and Professional Tone**: The README is written in a friendly yet professional tone to make it appealing.
-2. **Clear Instructions**: Step-by-step instructions for local setup, Docker setup, and GitHub Actions workflow.
-3. **Commands Included**: All necessary commands are provided for easy copy-paste.
-4. **Docker Hub Integration**: Clear instructions on how to set up and use Docker Hub.
-5. **Project Structure**: A visual representation of the project structure for better understanding.
-6. **Contact Information**: Adds a personal touch for collaboration or queries.
-
----
-
-### **How to Use This README**
-1. Copy the content above into your `README.md` file.
-2. Replace placeholders (e.g., `simrannegi`, `simran.negi@example.com`) with your actual details.
-3. Push the updated `README.md` to GitHub:
-   ```bash
-   git add README.md
-   git commit -m "Added a perfect README file"
-   git push origin main
-   ```
-
----
