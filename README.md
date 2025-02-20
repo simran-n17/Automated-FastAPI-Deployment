@@ -100,7 +100,7 @@ docker pull your-dockerhub-username/fastapi-app:latest
 ```
 
 **Docker Hub URL**: [https://hub.docker.com/repository/docker/your-dockerhub-username/fastapi-app](https://hub.docker.com/repository/docker/your-dockerhub-username/fastapi-app)
-
+(My Docker Hub URL: https://hub.docker.com/repository/docker/simrannegi/fastapi-app)
 ---
 
 ## 📂 Project Structure
@@ -123,20 +123,6 @@ devops-assignment/
 - [FastAPI](https://fastapi.tiangolo.com/) - Python web framework
 - [Docker](https://www.docker.com/) - Containerization platform
 - [GitHub Actions](https://github.com/features/actions) - CI/CD automation
-
----
-
-## 🙌 Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
-
----
-
-## 📞 Contact
-
-For questions or collaborations, reach out via:
-- GitHub: [your-username](https://github.com/your-username)
-- Email: your-email@example.com
 
 ---
 
