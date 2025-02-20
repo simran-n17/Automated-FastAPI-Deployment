@@ -100,7 +100,8 @@ docker pull your-dockerhub-username/fastapi-app:latest
 ```
 
 **Docker Hub URL**: [https://hub.docker.com/repository/docker/your-dockerhub-username/fastapi-app](https://hub.docker.com/repository/docker/your-dockerhub-username/fastapi-app)
-(My Docker Hub URL: https://hub.docker.com/repository/docker/simrannegi/fastapi-app)
+
+**My Docker Hub URL**: [https://hub.docker.com/repository/docker/simrannegi/fastapi-app](https://hub.docker.com/repository/docker/simrannegi/fastapi-app)
 ---
 
 ## 📂 Project Structure
